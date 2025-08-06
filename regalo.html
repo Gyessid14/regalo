@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        .montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .heart-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fecaca' fill-opacity='0.2' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .letter-paper {
+            background: linear-gradient(to bottom, #fffaf0 0%, #fffaf0 5%, #fffaf0 5%, #fffaf0 6%, #fff5e6 6%, #fff5e6 45%, #fff 45%, #fff 100%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="heart-pattern min-h-screen bg-pink-50">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <!-- Encabezado con título -->
+        <header class="text-center mb-12">
+            <h1 class="dancing-script text-5xl md:text-6xl font-bold text-pink-600 mb-4">Para Ti, Mi Negra...</h1>
+            <div class="w-24 h-1 bg-pink-300 mx-auto mb-6"></div>
+            <p class="montserrat text-lg text-gray-700 italic">"Eres la calma, en medio de todas mis tormentas."</p>
+        </header>
+
+        <!-- Sección de texto introductorio -->
+        <section class="mb-16 bg-white rounded-lg shadow-md p-8">
+            <h2 class="dancing-script text-3xl text-pink-500 mb-4">Querida <span id="nombreNovia" class="border-b-2 border-pink-300">Maria Lara</span></h2>
+            <p class="montserrat text-gray-700 mb-4">Hoy quiero dedicarte este pequeño espacio lleno de todo el amor que siento por ti. A veces las palabras no son suficientes para expresar lo que llevo dentro, pero espero que a través de estas líneas y recuerdos puedas sentir todo lo que significas para mí.</p>
+            <p class="montserrat text-gray-700">Eres la luz que ilumina mis días, la razón por la que sonrío sin motivo y el sueño que nunca quiero dejar de soñar.</p>
+        </section>
+
+
+        <!-- Sección de la carta -->
+        <section class="mb-16">
+            <h2 class="dancing-script text-3xl text-center text-pink-500 mb-8">Mi Carta Para Ti</h2>
+            <div class="letter-paper p-8 md:p-12 rounded-lg">
+                <div class="montserrat text-gray-800 leading-relaxed" id="cartaTexto">
+                    <p class="mb-4">Mi amor,</p>
+                    <p class="mb-4">Desde el momento en que entraste en mi vida, todo cobró un nuevo sentido. Cada día a tu lado es una aventura, una razón para ser mejor persona, para soñar más alto y para amar más profundamente.</p>
+                    <p class="mb-4">Recuerdo la primera vez que te vi, cómo tu sonrisa iluminó la habitación y cómo desde ese instante supe que eras especial. Con el tiempo, esa primera impresión se convirtió en certeza: eres el amor de mi vida.</p>
+                    <p class="mb-4">Agradezco cada risa compartida, cada lágrima enjugada, cada sueño conversado bajo las estrellas. Agradezco tu paciencia cuando fallo, tu apoyo cuando dudo y tu amor incondicional que me hace sentir el hombre más afortunado del mundo.</p>
+                    <p class="mb-4">Prometo seguir amándote cada día con la misma intensidad que la primera vez, porque contigo he descubierto que el verdadero amor no se desgasta con el tiempo, sino que crece y se fortalece.</p>
+                    <p class="mt-8">Con todo mi amor,</p>
+                    <p class="dancing-script text-2xl text-pink-600">[Tu Nombre]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección final -->
+        <footer class="text-center">
+            <button id="btnCorazon" class="dancing-script bg-pink-500 hover:bg-pink-600 text-white text-xl px-6 py-3 rounded-full shadow-lg transform transition hover:scale-105 mb-6">
+                Haz clic aquí  ❤️
+            </button>
+            <p class="montserrat text-gray-600">Hecho con amor solo para ti</p>
+        </footer>
+    </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nombreNovia = "mi amor"; // Puedes personalizar este texto si quieres
+
+    // Efecto del botón del corazón
+    const btnCorazon = document.getElementById('btnCorazon');
+    btnCorazon.addEventListener('click', function () {
+      // Crear corazones que caen
+      for (let i = 0; i < 15; i++) {
+        createHeart();
+      }
+
+      // Cambiar texto del botón
+      btnCorazon.textContent = "¡Te amo, " + nombreNovia + "! ❤️";
+      btnCorazon.classList.remove('bg-pink-500');
+      btnCorazon.classList.add('bg-red-500');
+    });
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.style.position = 'fixed';
+      heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = '-50px';
+      heart.style.zIndex = '1000';
+      heart.style.opacity = '0.8';
+      heart.style.animation = 'fall ' + (Math.random() * 3 + 2) + 's linear forwards';
+
+      document.body.appendChild(heart);
+
+      // Eliminar el corazón después de que termine la animación
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    // Agregar estilo para la animación de caída
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        to {
+          transform: translateY(${window.innerHeight + 100}px) rotate(360deg);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  });
+</script>
+
+</body>
+</html>
