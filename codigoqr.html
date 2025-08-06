@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Códigos QR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .qr-container {
+            transition: all 0.3s ease;
+        }
+        .qr-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .qr-placeholder {
+            background: repeating-linear-gradient(
+                45deg,
+                #f3f4f6,
+                #f3f4f6 10px,
+                #e5e7eb 10px,
+                #e5e7eb 20px
+            );
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                <span class="text-indigo-600">QR</span> Generator Pro
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Escanea los códigos QR para acceder a contenido exclusivo. Cada código contiene información única.
+            </p>
+        </header>
+
+        <!-- QR Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- QR 1 -->
+            <div class="qr-container bg-white rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-qrcode mr-2 text-indigo-500"></i> Código Personal
+                </h2>
+                <div class="qr-placeholder w-full h-64 rounded-lg mb-4 flex items-center justify-center">
+                    <span class="text-gray-400">Coloque aquí su código QR</span>
+                </div>
+                <p class="text-gray-600">
+                    Este código contiene tu información de contacto personal. Compártelo para que otros puedan guardar tus datos fácilmente.
+                </p>
+            </div>
+
+            <!-- QR 2 -->
+            <div class="qr-container bg-white rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-link mr-2 text-indigo-500"></i> Enlace Rápido
+                </h2>
+                <div class="qr-placeholder w-full h-64 rounded-lg mb-4 flex items-center justify-center">
+                    <span class="text-gray-400">Coloque aquí su código QR</span>
+                </div>
+                <p class="text-gray-600">
+                    Escanea este código para acceder directamente a nuestro sitio web principal. Ideal para promociones y material de marketing.
+                </p>
+            </div>
+
+            <!-- QR 3 -->
+            <div class="qr-container bg-white rounded-xl shadow-md overflow-hidden p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-wifi mr-2 text-indigo-500"></i> WiFi Automático
+                </h2>
+                <div class="qr-placeholder w-full h-64 rounded-lg mb-4 flex items-center justify-center">
+                    <span class="text-gray-400">Coloque aquí su código QR</span>
+                </div>
+                <p class="text-gray-600">
+                    Código QR para conexión WiFi automática. Los visitantes pueden escanearlo para conectarse a tu red sin necesidad de contraseña.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-500 text-sm">
+            <p>© 2023 QR Generator Pro. Todos los derechos reservados.</p>
+            <p class="mt-2">Escanea, conecta y comparte con facilidad.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Aquí puedes agregar funcionalidad JavaScript si necesitas generar los QR dinámicamente
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ejemplo: Podrías agregar aquí la generación de QR usando una librería como QRious
+            console.log('Página lista para implementar generación de QR');
+        });
+    </script>
+</body>
+</html>
